@@ -3,6 +3,7 @@
 import { createResource } from "@brigad/redux-rest-easy"
 import { normalize, schema } from "normalizr"
 import { customerSelfServiceBackend } from "../config"
+import {AuthenticationControllerApi} from "../api/customer-management-backend/src";
 
 const usersSchema = new schema.Entity("users", undefined, {
   idAttribute: "email",

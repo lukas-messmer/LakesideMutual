@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@beam-australia/react-env": "^3.1.1",
+    "@openapitools/openapi-generator-cli": "^2.13.4",
     "flow-bin": "^0.244.0",
     "react-scripts": "5.0.1"
   },
@@ -30,7 +31,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "doc": "documentation build src/** -f html -o docs",
-    "flow": "flow"
+    "flow": "flow",
+    "openapi-generate": "npx openapi-generator-cli generate -g javascript -i http://localhost:8080/v3/api-docs -o ./src/openapi/customer-self-service-backend --global-property apis,models && npx openapi-generator-cli generate -g javascript -i http://localhost:8100/v3/api-docs -o ./src/openapi/customer-management-backend --global-property apis,models"
   },
   "prettier": {
     "trailingComma": "es5",
